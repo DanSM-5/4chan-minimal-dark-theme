@@ -330,7 +330,7 @@ div.post div.postInfo span.nameBlock span.name {
 .reply:target,
 .reply.highlight {
     background: #383838!important;
-    border: 1px solid #383838 !important;
+    border: none !important;
 }
 div.post div.postInfo span.postNum > a {
     color: #fff!important;
@@ -349,7 +349,12 @@ div.thread {
     max-height: 0px !important;
     transition: .4s ease-out !important;
 }
-.file:hover .fileText,
+
+/*
+ * always expand 
+ * .file:hover
+ */
+.file .fileText,
 .file.image-expanded .fileText {
     opacity: 1 !important;
     max-height: 22px !important;
@@ -493,6 +498,7 @@ div#absbot {
     box-shadow: none !important;
 }
 
+/* TODO: Review later */
 div.center,
 h1,
 hr,
@@ -592,6 +598,22 @@ hreadHideButton {
 }
 
 /*  QUICK REPLY  */
+#qrPost {
+  display: flex;
+  justify-self: center;
+}
+#qrForm {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  input[type="text"], textarea, #recaptcha_response_field, .div {
+    width: 100% !important;
+  }
+}
+#qrFile {
+  width: unset;
+}
 #qr label input[type="checkbox"] {
     position: relative;
     top: 2px;
@@ -896,3 +918,23 @@ input[name="sub"] {
     color: #a8a8a8 !important;
     content: "post has been hidden" !important;
 }
+
+.UIPanel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Custom CSS Menu */
+#customCSSMenu {
+  .reply {
+    height: 50vh;
+  }
+  .center {
+    display: block !important;
+  }
+  textarea {
+    height: 80% !important;
+  }
+}
+
